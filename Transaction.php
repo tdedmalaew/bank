@@ -76,6 +76,9 @@ class Transaction {
             $stmt->closeCursor();
  
             // ---> to do here ***************
+            if($availableAmount < 0){
+                new throw PDOExcaption();
+            }
  
             // commit the transaction
             $this->pdo->commit();
